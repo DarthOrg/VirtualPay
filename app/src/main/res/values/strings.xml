@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Virtual Pay</string>
+    <string name="seu_nome">Seu nome</string>
+    <string name="comecar">Começar</string>
+    <string name="valor_do_cartao">Valor do cartão</string>
+    <string name="cartao_virtual">cartão virtual</string>
+    <string name="banco_imobiliario">Banco Imobiliário</string>
+    <string name="titulos">Titulos</string>
+    <string name="sorte_reves">Sorte/Revés</string>
+    <string name="pagar">Pagar</string>
+    <string name="jogador">Jogador</string>
+    <string name="comprar">Comprar</string>
+    <string name="seus_titulos">Seus titulos</string>
+    <string name="vender">Vender</string>
+    <string name="cartao_do_jogador">"Cartao do jogador "</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="menssagem_dialog_funcao_cartao">O que deseja fazer?</string>
+    <string name="disponivel">" disponivel"</string>
+    <string name="cartao">"Cartão "</string>
+    <string name="jogadores">Jogadores</string>
+
+    <array name="funcoes_cartao">
+        <item>Pagar</item>
+        <item>Receber</item>
+        <item>Transferir</item>
+    </array>
 </resources>
