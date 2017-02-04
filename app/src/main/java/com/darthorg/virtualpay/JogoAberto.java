@@ -1,7 +1,9 @@
 package com.darthorg.virtualpay;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Parcelable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -15,16 +17,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import manager.PrefManager;
 
-public class Inicio extends AppCompatActivity {
+public class JogoAberto extends AppCompatActivity {
 
     private PrefManager prefManager;
 
@@ -32,7 +31,7 @@ public class Inicio extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio);
+        setContentView(R.layout.activity_jogo_aberto);
         fullscreenTransparent();
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -51,11 +50,42 @@ public class Inicio extends AppCompatActivity {
         final Button btnVender = (Button) findViewById(R.id.btnVender);
         final Button btnComprar = (Button) findViewById(R.id.btnComprar);
 
+        //Extrato Cartao
+        cartao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(JogoAberto.this, CartaoVirtual.class);
+
+                String nomeJogador = "";
+                String valorCartao = "";
+
+                nomeJogador = nome_jogador.getText().toString();
+                valorCartao = valor_cartao_jogador.getText().toString();
+                Bundle bundle = new Bundle();
+
+                bundle.putString("nomeJogador", nomeJogador);
+                bundle.putString("valorCartao", valorCartao);
+                intent.putExtras(bundle);
+
+                startActivity(intent);
+            }
+        });
+
         //Dialog SORTE OU REVES
         btnSorteReves.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Sorte ou Revés Clicado ",Toast.LENGTH_LONG).show();
+                AlertDialog.Builder builderPagar = new AlertDialog.Builder(JogoAberto.this);
+
+                LayoutInflater layoutInflater = getLayoutInflater();
+                final View dialoglayout = layoutInflater.inflate(R.layout.dialog_sorte, null);
+
+                builderPagar.setView(dialoglayout);
+
+                final AlertDialog dialogPagar = builderPagar.create();
+
+
+                dialogPagar.show();
             }
         });
 
@@ -79,7 +109,7 @@ public class Inicio extends AppCompatActivity {
         btnPagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builderPagar = new AlertDialog.Builder(Inicio.this);
+                AlertDialog.Builder builderPagar = new AlertDialog.Builder(JogoAberto.this);
 
                 LayoutInflater layoutInflater = getLayoutInflater();
                 final View dialoglayout = layoutInflater.inflate(R.layout.dialog_funcoes_pagar, null);
@@ -104,7 +134,7 @@ public class Inicio extends AppCompatActivity {
         btnVender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builderVender = new AlertDialog.Builder(Inicio.this);
+                AlertDialog.Builder builderVender = new AlertDialog.Builder(JogoAberto.this);
 
                 LayoutInflater layoutInflater = getLayoutInflater();
                 final View dialoglayout = layoutInflater.inflate(R.layout.dialog_funcoes_vender, null);
@@ -130,7 +160,7 @@ public class Inicio extends AppCompatActivity {
         btnComprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builderComprar = new AlertDialog.Builder(Inicio.this);
+                AlertDialog.Builder builderComprar = new AlertDialog.Builder(JogoAberto.this);
 
                 LayoutInflater layoutInflater = getLayoutInflater();
                 final View dialoglayout = layoutInflater.inflate(R.layout.dialog_funcoes_comprar, null);
@@ -151,11 +181,6 @@ public class Inicio extends AppCompatActivity {
             }
 
         });
-//
-
-
-
-
 
     }
 

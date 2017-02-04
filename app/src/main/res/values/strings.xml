@@ -3,7 +3,7 @@
     <string name="seu_nome">Seu nome</string>
     <string name="comecar">Começar</string>
     <string name="valor_do_cartao">Valor do cartão</string>
-    <string name="cartao_virtual">cartão virtual</string>
+    <string name="cartao_virtual">Cartão virtual</string>
     <string name="banco_imobiliario">Banco Imobiliário</string>
     <string name="titulos">Titulos</string>
     <string name="sorte_reves">Sorte/Revés</string>
@@ -26,4 +26,13 @@
         <item>Receber</item>
         <item>Transferir</item>
     </array>
+    <string name="title_activity_extrato_cartao">ExtratoCartao</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="extrato_cartao">Extrado Cartão</string>
+    <string name="saldo_da_conta">saldo da conta</string>
+    <string name="simbolo_real">R$</string>
+    <string name="sorte">SORTE</string>
+    <string name="receber">Receber</string>
+    <string name="reves">Reves</string>
 </resources>

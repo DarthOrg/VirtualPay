@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorWhiteFundo"
-    tools:context="com.darthorg.virtualpay.Inicio">
+    tools:context="com.darthorg.virtualpay.JogoAberto">
 
     <RelativeLayout
         android:layout_width="match_parent"
