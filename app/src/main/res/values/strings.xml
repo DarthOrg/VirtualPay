@@ -18,6 +18,8 @@
     <string name="disponivel">" disponivel"</string>
     <string name="cartao">"Cartão "</string>
     <string name="jogadores">Jogadores</string>
+    <string name="banco">Banco</string>
+    <string name="espaco"> </string>
 
     <array name="funcoes_cartao">
         <item>Pagar</item>

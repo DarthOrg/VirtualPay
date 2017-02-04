@@ -9,23 +9,47 @@
     android:background="@color/colorWhiteFundo"
     tools:context="com.darthorg.virtualpay.Inicio">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorWhite"
+        android:background="@color/colorTransparente"
         android:theme="?attr/actionBarTheme"
         android:minHeight="?attr/actionBarSize"
         android:layout_alignParentTop="true"
+        app:title=" "
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        app:title="Banco Imobiliario"
-        app:subtitle="Virtual pay"
         android:id="@+id/toolbar" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/banco_imobiliario"
+                android:textColor="@color/colorBlack"
+                android:textSize="25dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Virtual Pay"
+                android:textSize="18dp"
+                android:textColor="@color/colorBlackTransparente127"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+    </RelativeLayout>
 
     
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="30dp">
 
         <!--atraz do cartão-->
@@ -46,37 +70,37 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnSorteReves"
+                    android:id="@+id/btnPagar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sorte_reves"
+                    android:text="@string/pagar"
                     android:layout_weight="1"
                     android:textAllCaps="false"
-                    android:drawableTop="@drawable/ic_sorte_reves"
+                    android:drawableTop="@drawable/ic_cartao"
                     android:background="@color/colorTransparente"
                     android:drawablePadding="10dp"
                     android:padding="5dp"/>
 
                 <Button
-                    android:id="@+id/btnTitulos"
+                    android:id="@+id/btnVender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/titulos"
+                    android:text="@string/vender"
                     android:layout_weight="1"
                     android:textAllCaps="false"
-                    android:drawableTop="@drawable/ic_titulos"
+                    android:drawableTop="@drawable/ic_vender"
                     android:background="@color/colorTransparente"
                     android:drawablePadding="10dp"
                     android:padding="5dp"/>
 
                 <Button
-                    android:id="@+id/btnJogadores"
+                    android:id="@+id/btnComprar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/jogadores"
+                    android:text="@string/comprar"
                     android:layout_weight="1"
                     android:textAllCaps="false"
-                    android:drawableTop="@drawable/ic_jogadores"
+                    android:drawableTop="@drawable/ic_comprar"
                     android:background="@color/colorTransparente"
                     android:drawablePadding="10dp"
                     android:padding="5dp"/>
@@ -186,6 +210,56 @@
 
         </LinearLayout>
 
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/colorWhite"
+            android:elevation="5dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSorteReves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sorte_reves"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:drawableTop="@drawable/ic_sorte_reves"
+                android:background="@color/colorTransparente"
+                android:drawablePadding="10dp"
+                android:padding="5dp"/>
+
+            <Button
+                android:id="@+id/btnBanco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/banco"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:drawableTop="@drawable/ic_banco"
+                android:background="@color/colorTransparente"
+                android:drawablePadding="10dp"
+                android:padding="5dp"/>
+
+            <Button
+                android:id="@+id/btnJogadores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jogadores"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:drawableTop="@drawable/ic_jogadores"
+                android:background="@color/colorTransparente"
+                android:drawablePadding="10dp"
+                android:padding="5dp"/>
+
+
+
+        </LinearLayout>
 
 
 

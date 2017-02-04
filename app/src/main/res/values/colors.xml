@@ -20,16 +20,16 @@
 
 
 
-    <color name="colorRed">#F44336</color>
+    <color name="colorRed">#e40004</color>
     <color name="colorPink">#FF4081</color>
     <color name="colorPurple">#7B1FA2</color>
     <color name="colorPurpleDeep">#7C4DFF</color>
     <color name="colorIndigo">#3F51B5</color>
     <color name="colorAzul">#448AFF</color>
     <color name="colorVerdeTeal">#009688</color>
-    <color name="colorVerde">#4CAF50</color>
+    <color name="colorVerde">#277c2a</color>
     <color name="colorVerdeLight">#8BC34A</color>
-    <color name="colorAmber">#FFC107</color>
+    <color name="colorAmber">#ffe100</color>
     <color name="colorOrangeDeep">#FF5722</color>
     <color name="colorGrey">#9E9E9E</color>
     <color name="colorGreyBlue">#607D8B</color>
