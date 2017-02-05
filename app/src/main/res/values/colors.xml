@@ -7,10 +7,13 @@
 
 
     <color name="colorWhite">#ffffff</color>
+    <color name="colorWhiteTransparente185">#b9ffffff</color>
     <color name="colorWhiteTransparente127">#7fffffff</color>
     <color name="colorWhiteTransparente61">#3dffffff</color>
     <color name="colorWhiteFundo">#f5f5f5</color>
+    <color name="colorBlackCinza">#131313</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorBlackTransparente185">#b9000000</color>
     <color name="colorBlackTransparente127">#7f000000</color>
     <color name="colorBlackTransparente85">#55000000</color>
     <color name="colorBlackTransparente61">#3d000000</color>
@@ -31,6 +34,7 @@
     <color name="colorVerdeLight">#8BC34A</color>
     <color name="colorOrange">#FF5722</color>
     <color name="colorGrey">#9E9E9E</color>
+    <color name="colorGreyTransparent">#9E9E9E</color>
     <color name="colorGreyBlue">#607D8B</color>
     <color name="colorGreyLight">#bdc3c7</color>
 </resources>

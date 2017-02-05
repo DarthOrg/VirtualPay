@@ -46,7 +46,7 @@
         </LinearLayout>
     </RelativeLayout>
 
-    
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -167,7 +167,7 @@
                 android:id="@+id/valor_cartao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="25000"
+                android:text="29.356"
                 android:maxLength="9"
                 android:layout_weight="1"
                 android:textColor="@color/colorWhite"
@@ -183,11 +183,12 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/nome_jogador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Wendell Ugalds"
+                android:text="Fulano de Tal"
                 android:layout_weight="1"
                 android:textSize="15dp"
                 android:textColor="@color/colorWhite"/>
@@ -203,7 +204,7 @@
                 android:id="@+id/titulos_jogadores"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="03/30"
+                android:text="29/30"
                 android:textSize="16dp"
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>

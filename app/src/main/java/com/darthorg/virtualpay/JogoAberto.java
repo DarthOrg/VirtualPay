@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -67,6 +68,7 @@ public class JogoAberto extends AppCompatActivity {
                 bundle.putString("valorCartao", valorCartao);
                 intent.putExtras(bundle);
 
+
                 startActivity(intent);
             }
         });
@@ -75,17 +77,28 @@ public class JogoAberto extends AppCompatActivity {
         btnSorteReves.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builderPagar = new AlertDialog.Builder(JogoAberto.this);
+                AlertDialog.Builder builderSR = new AlertDialog.Builder(JogoAberto.this);
 
                 LayoutInflater layoutInflater = getLayoutInflater();
                 final View dialoglayout = layoutInflater.inflate(R.layout.dialog_sorte, null);
 
-                builderPagar.setView(dialoglayout);
+                builderSR.setView(dialoglayout);
 
-                final AlertDialog dialogPagar = builderPagar.create();
+                final Button btnReceber = (Button) dialoglayout.findViewById(R.id.btnReceber);
+                final TextView valorSorteReves = (TextView) dialoglayout.findViewById(R.id.valorSorteReves);
+
+                final AlertDialog dialogRS = builderSR.create();
+
+                btnReceber.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogRS.dismiss();
+                        Toast.makeText(getApplicationContext(),nome_jogador.getText().toString()+" recebeu "+valorSorteReves.getText().toString(),Toast.LENGTH_LONG).show();
+                    }
+                });
 
 
-                dialogPagar.show();
+                dialogRS.show();
             }
         });
 
@@ -101,7 +114,55 @@ public class JogoAberto extends AppCompatActivity {
         btnJogadores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Jogadores Clicado ",Toast.LENGTH_LONG).show();
+                AlertDialog.Builder builderJogadores = new AlertDialog.Builder(JogoAberto.this);
+
+                LayoutInflater layoutInflater = getLayoutInflater();
+                final View dialoglayout = layoutInflater.inflate(R.layout.dialog_jogadores, null);
+
+                builderJogadores.setView(dialoglayout);
+
+                final LinearLayout jogador1 = (LinearLayout) dialoglayout.findViewById(R.id.jogador1);
+                final LinearLayout jogador2 = (LinearLayout) dialoglayout.findViewById(R.id.jogador2);
+                final LinearLayout jogador3 = (LinearLayout) dialoglayout.findViewById(R.id.jogador3);
+
+
+                builderJogadores.setIcon(getResources().getDrawable(R.drawable.ic_jogadores));
+                builderJogadores.setTitle("Jogadores");
+                builderJogadores.setMessage("Selecione um jogador para visualizar o cartão.");
+                final AlertDialog dialogJogadores = builderJogadores.create();
+
+                jogador1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_red));
+                        nome_jogador.setText("Darth Org");
+                        valor_cartao_jogador.setText("24.000");
+                        titulos_jogador.setText("01/30");
+                        dialogJogadores.dismiss();
+                    }
+                });
+                jogador2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_black));
+                        nome_jogador.setText("Wendell Ugalds");
+                        valor_cartao_jogador.setText("15.230");
+                        titulos_jogador.setText("10/30");
+                        dialogJogadores.dismiss();
+                    }
+                });
+                jogador3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_indigo));
+                        nome_jogador.setText("Gustavo Candido");
+                        valor_cartao_jogador.setText("23.500");
+                        titulos_jogador.setText("05/30");
+                        dialogJogadores.dismiss();
+                    }
+                });
+
+                dialogJogadores.show();
             }
         });
 

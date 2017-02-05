@@ -22,6 +22,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import static com.darthorg.virtualpay.R.id.nome_jogador;
+
 public class CartaoVirtual extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -51,6 +53,7 @@ public class CartaoVirtual extends AppCompatActivity {
         toolbar.setSubtitle(nomeJogador);
         TextView valorCartaoJogador = (TextView) findViewById(R.id.valor_cartao);
         valorCartaoJogador.setText(valorCartao);
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

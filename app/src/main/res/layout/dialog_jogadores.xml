@@ -3,160 +3,205 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+    android:padding="10dp"
             android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tituloPopup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left|top"
+
+    <LinearLayout
+        android:id="@+id/jogador1"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
         android:layout_marginBottom="10dp"
-        android:text="Jogadores"
-        android:textAllCaps="true"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/colorBlack"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp" />
+        android:background="@drawable/cor_cartao_red">
 
-
-
-    <TextView
-        android:id="@+id/txtPopup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tituloPopup"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignStart="@+id/tituloPopup"
-        android:layout_below="@+id/tituloPopup"
-        android:layout_marginLeft="16dp"
-        android:text="Selecione um jogador"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/colorBlack"
-        android:textSize="16dp"
-        android:layout_marginBottom="10dp" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_weight="1">
-        <Button
-            android:id="@+id/jogador_um"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:paddingLeft="16dp"
-            android:text="Darth Org"
-            android:textAllCaps="false"
-            android:textSize="18dp"
-            android:textAlignment="textStart"
-            android:paddingBottom="10dp"
-            android:background="@color/colorTransparente"
-            android:layout_gravity="center_vertical"/>
-
-        <TextView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="7dp"
-            android:text="$ 24.000" />
-
-        <Button
-            android:layout_width="47dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorRed"
-            android:layout_gravity="center_vertical"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:drawableLeft="@drawable/ic_cartao_white"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/colorGrey" />
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_weight="1">
-        <Button
-            android:id="@+id/jogador_dois"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:paddingLeft="16dp"
-            android:text="Wendell Ugalds"
-            android:textAllCaps="false"
-            android:textSize="18dp"
-            android:textAlignment="textStart"
-            android:paddingBottom="10dp"
+            android:src="@drawable/ic_jogador_white"
             android:background="@color/colorTransparente"
-            android:layout_gravity="center_vertical"/>
-
-        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"/>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="7dp"
-            android:text="$ 15.230" />
-
-        <Button
-            android:layout_width="47dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorVerdeLight"
+            android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:drawableLeft="@drawable/ic_cartao_white"/>
-    </RelativeLayout>
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/nome_jogador_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Darth Org"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ "
+                android:textColor="@color/colorWhiteTransparente185"
+                android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/valor_cartao_jogador_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24.000"
+                    android:textColor="@color/colorWhiteTransparente185"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/colorGrey" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_weight="1">
         <Button
-            android:id="@+id/jogador_tres"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:paddingLeft="16dp"
-            android:text="Gustavo Candido"
-            android:textAllCaps="false"
-            android:textSize="18dp"
-            android:textAlignment="textStart"
-            android:paddingBottom="10dp"
-            android:background="@color/colorTransparente"
-            android:layout_gravity="center_vertical"/>
-
-        <TextView
+            android:id="@+id/titulos_jogador_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="7dp"
-            android:text="$ 23.500" />
+            android:text="01/30"
+            android:drawableRight="@drawable/ic_titulos_white"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorTransparente"
+            android:layout_margin="10dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jogador2"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/cor_cartao_black">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_jogador_white"
+            android:background="@color/colorTransparente"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/nome_jogador_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wendell Ugalds"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R$ "
+                    android:textColor="@color/colorWhiteTransparente185"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/valor_cartao_jogador_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15.230"
+                    android:textColor="@color/colorWhiteTransparente185"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
 
         <Button
-            android:layout_width="47dp"
+            android:id="@+id/titulos_jogador_2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorIndigo"
+            android:text="10/30"
+            android:drawableRight="@drawable/ic_titulos_white"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorTransparente"
+            android:layout_margin="10dp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jogador3"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/cor_cartao_indigo">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_jogador_white"
+            android:background="@color/colorTransparente"
             android:layout_gravity="center_vertical"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:drawableLeft="@drawable/ic_cartao_white"/>
-    </RelativeLayout>
+            android:layout_margin="16dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/nome_jogador_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gustavo Candido"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R$ "
+                    android:textColor="@color/colorWhiteTransparente185"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/valor_cartao_jogador_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23.500"
+                    android:textColor="@color/colorWhiteTransparente185"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/titulos_jogador_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="05/30"
+            android:focusable="true"
+            android:drawableRight="@drawable/ic_titulos_white"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorTransparente"
+            android:layout_margin="10dp"
+            />
+
+
+    </LinearLayout>
 
 
         </LinearLayout>
