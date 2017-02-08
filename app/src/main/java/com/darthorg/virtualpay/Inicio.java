@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Inicio extends AppCompatActivity {
 
@@ -28,11 +27,21 @@ public class Inicio extends AppCompatActivity {
         final LinearLayout cartao = (LinearLayout) findViewById(R.id.cartao);
         ImageButton cor = (ImageButton) findViewById(R.id.cor);
         final Button btnComecar = (Button) findViewById(R.id.btnComecar);
+        final TextView corID = (TextView) findViewById(R.id.corId);
 
         btnComecar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Inicio.this, JogoAberto.class);
+                Intent intent = new Intent(Inicio.this, AdicionarJogadores.class);
+
+                String cor = "";
+
+                cor = corID.getText().toString();
+                Bundle bundle = new Bundle();
+
+                bundle.putString("corID", cor);
+                intent.putExtras(bundle);
+
                 startActivity(intent);
             }
         });
@@ -43,18 +52,27 @@ public class Inicio extends AppCompatActivity {
                 AlertDialog.Builder builderCor = new AlertDialog.Builder(Inicio.this);
 
                 LayoutInflater layoutInflater = getLayoutInflater();
-                final View dialoglayout = layoutInflater.inflate(R.layout.dialog_cor_cartao, null);
+                final View dialoglayout = layoutInflater.inflate(R.layout.dialog_cor, null);
 
                 builderCor.setView(dialoglayout);
 
-                final FloatingActionButton corBlack = (FloatingActionButton) dialoglayout.findViewById(R.id.btnCorBlack);
-                final FloatingActionButton corGrey = (FloatingActionButton) dialoglayout.findViewById(R.id.btnCorGrey);
-                final FloatingActionButton corIndigo = (FloatingActionButton) dialoglayout.findViewById(R.id.btnCorIndigo);
-                final FloatingActionButton corOrange = (FloatingActionButton) dialoglayout.findViewById(R.id.btnCorOrange);
-                final FloatingActionButton corPink = (FloatingActionButton) dialoglayout.findViewById(R.id.btnCorPink);
-                final FloatingActionButton corPurple = (FloatingActionButton) dialoglayout.findViewById(R.id.btnCorPurple);
-                final FloatingActionButton corRed = (FloatingActionButton) dialoglayout.findViewById(R.id.btnCorRed);
-                final FloatingActionButton corVerde = (FloatingActionButton) dialoglayout.findViewById(R.id.btnCorVerde);
+                final ImageButton corBlack = (ImageButton) dialoglayout.findViewById(R.id.btnCorBlack);
+                final ImageButton corGrey = (ImageButton) dialoglayout.findViewById(R.id.btnCorGrey);
+                final ImageButton corIndigo = (ImageButton) dialoglayout.findViewById(R.id.btnCorIndigo);
+                final ImageButton corOrange = (ImageButton) dialoglayout.findViewById(R.id.btnCorOrange);
+                final ImageButton corPink = (ImageButton) dialoglayout.findViewById(R.id.btnCorPink);
+                final ImageButton corPurple = (ImageButton) dialoglayout.findViewById(R.id.btnCorPurple);
+                final ImageButton corRed = (ImageButton) dialoglayout.findViewById(R.id.btnCorRed);
+                final ImageButton corVerde = (ImageButton) dialoglayout.findViewById(R.id.btnCorVerde);
+
+//                final LinearLayout corBlack = (LinearLayout) dialoglayout.findViewById(R.id.btnCorBlack);
+//                final LinearLayout corGrey = (LinearLayout) dialoglayout.findViewById(R.id.btnCorGrey);
+//                final LinearLayout corIndigo = (LinearLayout) dialoglayout.findViewById(R.id.btnCorIndigo);
+//                final LinearLayout corOrange = (LinearLayout) dialoglayout.findViewById(R.id.btnCorOrange);
+//                final LinearLayout corPink = (LinearLayout) dialoglayout.findViewById(R.id.btnCorPink);
+//                final LinearLayout corPurple = (LinearLayout) dialoglayout.findViewById(R.id.btnCorPurple);
+//                final LinearLayout corRed = (LinearLayout) dialoglayout.findViewById(R.id.btnCorRed);
+//                final LinearLayout corVerde = (LinearLayout) dialoglayout.findViewById(R.id.btnCorVerde);
 
                 builderCor.setTitle("Cor");
                 builderCor.setMessage("Personaliza seu cartão inicial");
@@ -65,6 +83,7 @@ public class Inicio extends AppCompatActivity {
                     public void onClick(View v) {
                         cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_black));
                         btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_black));
+                        corID.setText("1");
                         dialogCor.dismiss();
                     }
                 });
@@ -73,6 +92,7 @@ public class Inicio extends AppCompatActivity {
                     public void onClick(View v) {
                         cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_grey));
                         btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_grey));
+                        corID.setText("2");
                         dialogCor.dismiss();
                     }
                 });
@@ -81,22 +101,7 @@ public class Inicio extends AppCompatActivity {
                     public void onClick(View v) {
                         cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_indigo));
                         btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_indigo));
-                        dialogCor.dismiss();
-                    }
-                });
-                corOrange.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_orange));
-                        btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_orange));
-                        dialogCor.dismiss();
-                    }
-                });
-                corPink.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_pink));
-                        btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_pink));
+                        corID.setText("3");
                         dialogCor.dismiss();
                     }
                 });
@@ -105,14 +110,35 @@ public class Inicio extends AppCompatActivity {
                     public void onClick(View v) {
                         cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_purple));
                         btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_purple));
+                        corID.setText("4");
                         dialogCor.dismiss();
                     }
                 });
+                corOrange.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_orange));
+                        btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_orange));
+                        corID.setText("5");
+                        dialogCor.dismiss();
+                    }
+                });
+                corPink.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_pink));
+                        btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_pink));
+                        corID.setText("6");
+                        dialogCor.dismiss();
+                    }
+                });
+
                 corRed.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_red));
                         btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_red));
+                        corID.setText("7");
                         dialogCor.dismiss();
                     }
                 });
@@ -121,6 +147,7 @@ public class Inicio extends AppCompatActivity {
                     public void onClick(View v) {
                         cartao.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_verde));
                         btnComecar.setBackgroundDrawable(getResources().getDrawable(R.drawable.cor_cartao_verde));
+                        corID.setText("8");
                         dialogCor.dismiss();
                     }
                 });

@@ -35,4 +35,5 @@
     <string name="sorte">SORTE</string>
     <string name="receber">Receber</string>
     <string name="reves">Reves</string>
+    <string name="title_activity_adicionar_jogadores">AdicionarJogadores</string>
 </resources>
