@@ -82,6 +82,7 @@ public class AdicionarJogadores extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(AdicionarJogadores.this,JogoAberto.class);
                 startActivity(intent);
+                finish();
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
             }

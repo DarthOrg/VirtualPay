@@ -206,6 +206,7 @@ public class JogoAberto extends AppCompatActivity {
                 builderVender.setView(dialoglayout);
 
                 final FloatingActionButton btnVenderCasa = (FloatingActionButton) dialoglayout.findViewById(R.id.btnVenderCasa);
+                final FloatingActionButton btnTitulos = (FloatingActionButton) dialoglayout.findViewById(R.id.btnVenderTitulos);
                 final FloatingActionButton btnHipotecar = (FloatingActionButton) dialoglayout.findViewById(R.id.btnVenderHipotecarTitulos);
 
 
