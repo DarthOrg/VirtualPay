@@ -5,6 +5,7 @@
     <item
         android:id="@+id/action_fechar"
         android:title="Fechar"
+        android:visible="false"
         android:orderInCategory="100"
         android:icon="@drawable/ic_fechar"
         app:showAsAction="always"/>

@@ -37,6 +37,9 @@ public class JogoAberto extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationIcon(R.drawable.ic_fechar);
 
         final LinearLayout cartao =(LinearLayout) findViewById(R.id.cartao);
         final TextView nome_jogador = (TextView) findViewById(R.id.nome_jogador);
@@ -245,20 +248,20 @@ public class JogoAberto extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_virtualpay, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_virtualpay, menu);
+//        return true;
+//    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_fechar) {
+        if (id == android.R.id.home) {
             finish();
         }
-
         return super.onOptionsItemSelected(item);
     }
 
