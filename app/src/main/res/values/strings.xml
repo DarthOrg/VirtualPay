@@ -6,7 +6,7 @@
     <string name="cartao_virtual">Cartão virtual</string>
     <string name="banco_imobiliario">Banco Imobiliário</string>
     <string name="titulos">Titulos</string>
-    <string name="sorte_reves">Sorte/Revés</string>
+    <string name="noticias">Notícias</string>
     <string name="pagar">Pagar</string>
     <string name="jogador">Jogador</string>
     <string name="comprar">Comprar</string>
@@ -32,7 +32,7 @@
     <string name="extrato_cartao">Extrado Cartão</string>
     <string name="saldo_da_conta">saldo da conta</string>
     <string name="simbolo_real">R$</string>
-    <string name="sorte">SORTE</string>
+    <string name="noticia">Notícia</string>
     <string name="receber">Receber</string>
     <string name="reves">Reves</string>
     <string name="title_activity_adicionar_jogadores">AdicionarJogadores</string>

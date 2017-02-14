@@ -3,7 +3,6 @@ package com.darthorg.virtualpay;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.Parcelable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -11,13 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,7 +43,7 @@ public class JogoAberto extends AppCompatActivity {
         final TextView titulos_jogador = (TextView) findViewById(R.id.titulos_jogadores);
         final TextView valor_cartao_jogador = (TextView) findViewById(R.id.valor_cartao);
 
-        final Button btnSorteReves = (Button) findViewById(R.id.btnSorteReves);
+        final Button btnNoticia = (Button) findViewById(R.id.btnNoticia);
         final Button btnBanco = (Button) findViewById(R.id.btnBanco);
         final Button btnJogadores = (Button) findViewById(R.id.btnJogadores);
 
@@ -76,27 +73,41 @@ public class JogoAberto extends AppCompatActivity {
             }
         });
 
-        //Dialog SORTE OU REVES
-        btnSorteReves.setOnClickListener(new View.OnClickListener() {
+        //Dialog NOTÌCIA
+        btnNoticia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builderSR = new AlertDialog.Builder(JogoAberto.this);
 
                 LayoutInflater layoutInflater = getLayoutInflater();
-                final View dialoglayout = layoutInflater.inflate(R.layout.dialog_sorte, null);
+                final View dialoglayout = layoutInflater.inflate(R.layout.dialog_noticia, null);
 
                 builderSR.setView(dialoglayout);
 
                 final Button btnReceber = (Button) dialoglayout.findViewById(R.id.btnReceber);
-                final TextView valorSorteReves = (TextView) dialoglayout.findViewById(R.id.valorSorteReves);
+                final Button btnPagar = (Button) dialoglayout.findViewById(R.id.btnPagar);
+                final TextView valorNoticia = (TextView) dialoglayout.findViewById(R.id.valorSorteReves);
 
                 final AlertDialog dialogRS = builderSR.create();
 
                 btnReceber.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        dialogRS.dismiss();
-                        Toast.makeText(getApplicationContext(),nome_jogador.getText().toString()+" recebeu "+valorSorteReves.getText().toString(),Toast.LENGTH_LONG).show();
+                        btnReceber.setVisibility(View.GONE);
+                        btnPagar.setVisibility(View.VISIBLE);
+                        valorNoticia.setText("-7.000,00");
+                        valorNoticia.setTextColor(getResources().getColor(R.color.colorRed));
+                        Toast.makeText(getApplicationContext(),nome_jogador.getText().toString()+" Pagou "+ valorNoticia.getText().toString(),Toast.LENGTH_LONG).show();
+                    }
+                });
+                btnPagar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        btnReceber.setVisibility(View.VISIBLE);
+                        btnPagar.setVisibility(View.GONE);
+                        valorNoticia.setText("7.000,00");
+                        valorNoticia.setTextColor(getResources().getColor(R.color.colorVerdeLight));
+                        Toast.makeText(getApplicationContext(),nome_jogador.getText().toString()+" Recebeu "+ valorNoticia.getText().toString(),Toast.LENGTH_LONG).show();
                     }
                 });
 
