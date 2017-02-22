@@ -246,12 +246,26 @@ public class JogoAberto extends AppCompatActivity {
                 final FloatingActionButton btnComprarcTitulos = (FloatingActionButton) dialoglayout.findViewById(R.id.btnComprarcTitulos);
                 final FloatingActionButton btnComprarCasa = (FloatingActionButton) dialoglayout.findViewById(R.id.btnComprarCasa);
 
-
-
                 builderComprar.setIcon(getResources().getDrawable(R.drawable.ic_comprar));
                 builderComprar.setTitle("Gostaria de comprar o que?");
                 final AlertDialog dialogComprar = builderComprar.create();
 
+                //Comprar TITULOS
+                btnComprarcTitulos.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(JogoAberto.this,Titulos.class);
+                        startActivity(intent);
+                        dialogComprar.dismiss();
+                    }
+                });
+                //Comprar CASAs
+                btnComprarCasa.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogComprar.dismiss();
+                    }
+                });
 
                 dialogComprar.show();
             }
@@ -260,11 +274,6 @@ public class JogoAberto extends AppCompatActivity {
 
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_virtualpay, menu);
-//        return true;
-//    }
 
 
     @Override

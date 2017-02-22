@@ -9,13 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Inicio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".JogoAberto"></activity>
+        <activity android:name=".JogoAberto" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".CartaoVirtual"
             android:label="@string/title_activity_extrato_cartao"
@@ -23,7 +25,8 @@
         <activity
             android:name=".AdicionarJogadores"
             android:label="@string/title_activity_adicionar_jogadores"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Titulos"></activity>
     </application>
 
 </manifest>
